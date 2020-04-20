@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Text, StyleSheet, View, Alert, FlatList, ImageBackground, TouchableOpacity, ActivityIndicator,StatusBar } from 'react-native'
+import { Text, StyleSheet, View, Alert, FlatList, ImageBackground, TouchableOpacity, ActivityIndicator,StatusBar,} from 'react-native'
 import { MaterialIcons } from "@expo/vector-icons";
+
 
 
 export default function App({navigation}) {
@@ -16,7 +17,8 @@ export default function App({navigation}) {
       }).catch(error => {
           Alert.alert(error.message);
       }
-      ).then(setTimeout(() =>{
+      )
+      .then(setTimeout(() =>{
         setLoading(false)
       },2000)
       )

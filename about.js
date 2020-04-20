@@ -14,7 +14,7 @@ export default function About({navigation}) {
         <Image source={require("../NPL_Ash/assets/logo1.jpg")} style = {styles.logo} />
         <Text style = {styles.logotext}>This app is for departmental use only. To keep the privacy of the data, request you to please don't share it.</Text>
         
-        <TouchableOpacity onPress={() => Linking.openURL("https://github.com/love231992/Node-express-API")}>
+        <TouchableOpacity onPress={() => Linking.openURL("https://github.com/love231992/ash_sales_NPL")}>
             <View style = {styles.link}>
             <AntDesign name="github" size={20} color="white" style = {styles.giticon}/>
                 <Text style={styles.linkText}>Open Sourced on GITHUB</Text>

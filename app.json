@@ -7,13 +7,17 @@
       "android",
       "web"
     ],
+    "android": {
+      "package": "com.NPL.NPL_Ash",
+      "versionCode": 1
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/new.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#D3D3D3"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
