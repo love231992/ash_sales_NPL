@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Text, StyleSheet, View, Alert, FlatList, ImageBackground, TouchableOpacity, ActivityIndicator,StatusBar,} from 'react-native'
 import { MaterialIcons } from "@expo/vector-icons";
-
+import AnimatedLoader from "react-native-animated-loader";
 
 
 
 export default function App({navigation}) {
   const [doList,setDoList] = useState();
-  var [loading,setLoading] = useState(true)
+  var [loading,setLoading] = useState(false)
 
   connect = () => {
       setLoading(true)
@@ -37,13 +37,22 @@ export default function App({navigation}) {
           </ImageBackground>
           <TouchableOpacity onPress={connect}>
             <View style={styles.button}>
-                <Text style={styles.buttonText}>Connect to the server</Text>
+                <Text style={styles.buttonText}>CONNECT TO THE SERVER</Text>
             </View>   
           </TouchableOpacity>
           {loading ?
           (
+            // <View style={styles.indicator}>
+            // <ActivityIndicator size="large" color="crimson" />
+            // </View>
             <View style={styles.indicator}>
-            <ActivityIndicator size="large" color="crimson" />
+            <AnimatedLoader
+              visible={loading}
+              overlayColor="rgba(255,255,255,0)"
+              source={require("./assets/loading-circles.json")}
+              animationStyle={styles.lottie}
+              speed={1}
+            />
             </View>
           ):
 
@@ -145,5 +154,10 @@ footer:{
   letterSpacing:2.5,
   backgroundColor:"#DAB785"
 },
+lottie: {
+  // flex:1,
+  width: 200,
+  height: 400
+}
 
 })
