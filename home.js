@@ -4,6 +4,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 
 
+
 export default function App({navigation}) {
   const [doList,setDoList] = useState();
   var [loading,setLoading] = useState(true)
@@ -17,11 +18,9 @@ export default function App({navigation}) {
       }).catch(error => {
           Alert.alert(error.message);
       }
-      )
-      .then(setTimeout(() =>{
+      ).then( () => {
         setLoading(false)
-      },2000)
-      )
+      })
   }
 
   const openMenu = () => {
@@ -146,4 +145,5 @@ footer:{
   letterSpacing:2.5,
   backgroundColor:"#DAB785"
 },
+
 })
