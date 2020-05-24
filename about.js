@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
         marginTop:150,
         marginHorizontal:20,
-        textAlign:"center"
+        textAlign:"justify"
     },
     icon:{
         position:"absolute",

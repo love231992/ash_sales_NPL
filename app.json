@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "NPL_Ash",
+    "name": "NPL Ash",
     "slug": "NPL_Ash",
     "platforms": [
       "ios",
@@ -11,12 +11,12 @@
       "package": "com.NPL.NPL_Ash",
       "versionCode": 1
     },
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/dyke.png",
-      "resizeMode": "contain",
+      "image": "./assets/dyke1.png",
+      "resizeMode": "cover",
       "backgroundColor": "#D3D3D3"
     },
     "updates": {
