@@ -9,19 +9,18 @@ export default function About({navigation}) {
     }
     return (
         <ImageBackground source={require("../NPL_Ash/assets/bg.jpg")} style = {styles.bgconatiner}>
-           <MaterialIcons name="menu" size={40} style={styles.icon} onPress={openMenu} />
            
-        <Image source={require("../NPL_Ash/assets/logo1.jpg")} style = {styles.logo} />
+           
+        <Image source={require("../NPL_Ash/assets/new.png")} style = {styles.logo} />
+        <MaterialIcons name="menu" size={40} style={styles.icon} onPress={openMenu} />
         <Text style = {styles.logotext}>This app is for departmental use only. To keep the privacy of the data, request you to please don't share it.</Text>
-        
         <TouchableOpacity onPress={() => Linking.openURL("https://github.com/love231992/ash_sales_NPL")}>
             <View style = {styles.link}>
             <AntDesign name="github" size={20} color="white" style = {styles.giticon}/>
                 <Text style={styles.linkText}>Open Sourced on GITHUB</Text>
             </View>
         </TouchableOpacity>
-        <Text style = {styles.footer}>Crafted by Lovepreet Singh</Text>
-     
+        <Text style = {styles.footer}>Crafted with <AntDesign name="heart" size={14} color="red" /> by Lovepreet</Text>
         </ImageBackground>
     )
         
@@ -39,10 +38,10 @@ const styles = StyleSheet.create({
     },
     
     logo:{
-        width:120,
+        width:360,
         height:120,
-        opacity:0.8,
-        marginTop:40
+        // opacity:0.8,
+        // marginTop:40
     },
     logoconatiner:{
         alignItems:"center"
@@ -58,8 +57,8 @@ const styles = StyleSheet.create({
     icon:{
         position:"absolute",
         right:5,
-        color:"crimson",
-        marginTop:100   
+        color:"white",
+        marginTop:80   
       },
       footer:{
           justifyContent:"flex-end",

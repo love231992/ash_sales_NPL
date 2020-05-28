@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import { Text, StyleSheet, View, Alert, FlatList, ImageBackground, TouchableOpacity, ActivityIndicator,StatusBar,} from 'react-native'
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons, AntDesign } from "@expo/vector-icons";
 import AnimatedLoader from "react-native-animated-loader";
+import * as Animatable from 'react-native-animatable';
 
 
 
 export default function App({navigation}) {
   const [doList,setDoList] = useState();
   var [loading,setLoading] = useState(false)
-
+  // var [update,setUpdate] =useState("Last updated at ")
+  
+  
   connect = () => {
       setLoading(true)
       const URL = "https://npl-ash.herokuapp.com/";
       fetch(URL).then(response => response.json())
       .then(response => {
-          setDoList(response)
+          setDoList(response);
       }).catch(error => {
           Alert.alert(error.message);
       }
@@ -49,7 +52,7 @@ export default function App({navigation}) {
             <AnimatedLoader
               visible={loading}
               overlayColor="rgba(255,255,255,0)"
-              source={require("./assets/loading-circles.json")}
+              source={require("./assets/truck.json")}
               animationStyle={styles.lottie}
               speed={1}
             />
@@ -60,17 +63,18 @@ export default function App({navigation}) {
           <FlatList
             data={doList}
             keyExtractor={(item) => item[1] }
-            renderItem={({item }) => (
+            renderItem={({item,index }) => (
             <TouchableOpacity activeOpacity={0.4} >
-              <View style={styles.item}>  
-                <Text style={styles.itemText}>{item [0]}</Text>
-                <Text style={styles.itemText}>{item [1]}</Text>
-              </View>
+              <Animatable.View animation="zoomInDown" iterationDelay={index * 200} easing="linear" style={styles.item}>  
+                <Animatable.Text  duration={1000} style={styles.itemText}>{item [0]}</Animatable.Text>
+                <Animatable.Text  duration={1000} style={styles.itemText}>{item [1]}</Animatable.Text>
+              </Animatable.View>
               </TouchableOpacity>
             )}
             />
           )}
-          <Text style = {styles.footer}>Crafted by Lovepreet Singh</Text>
+          {/* <Text style = {styles.footer}>{update}</Text> */}
+          <Text style = {styles.footer}>Crafted with <AntDesign name="heart" size={14} color="red" /> by Lovepreet</Text>
       </View>  
   )
 }
@@ -92,7 +96,6 @@ const styles = StyleSheet.create({
     position:"absolute",
     right:5,
     color:"white",
-
   },
   headerTitle:{
     flexDirection:"row",
@@ -142,7 +145,8 @@ buttonText:{
 },
 indicator:{
   flex:1,
-  justifyContent:"center"
+  // justifyContent:"center",
+
 },
 footer:{
   textAlign:"center",
@@ -156,8 +160,8 @@ footer:{
 },
 lottie: {
   // flex:1,
-  width: 200,
-  height: 400
+  width: 300,
+  height:300
 }
 
 })
