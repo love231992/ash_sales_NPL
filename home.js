@@ -3,13 +3,12 @@ import { Text, StyleSheet, View, Alert, FlatList, ImageBackground, TouchableOpac
 import { MaterialIcons, AntDesign } from "@expo/vector-icons";
 import AnimatedLoader from "react-native-animated-loader";
 import * as Animatable from 'react-native-animatable';
-
+import {LineChart} from 'react-native-chart-kit';
 
 
 export default function App({navigation}) {
   const [doList,setDoList] = useState();
   var [loading,setLoading] = useState(false)
-  // var [update,setUpdate] =useState("Last updated at ")
   
   
   connect = () => {
